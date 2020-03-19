@@ -17,6 +17,16 @@ import Appointment from "/Users/bobby/lighthouse/scheduler/src/components/Appoin
 
 import Header from "/Users/bobby/lighthouse/scheduler/src/components/Appointment/Header.js"
 
+import Empty from "/Users/bobby/lighthouse/scheduler/src/components/Appointment/Empty.js"
+
+import Show from "/Users/bobby/lighthouse/scheduler/src/components/Appointment/Show.js"
+
+import Confirm from "/Users/bobby/lighthouse/scheduler/src/components/Appointment/Confirm.js"
+
+import Status from "/Users/bobby/lighthouse/scheduler/src/components/Appointment/Status.js"
+
+import Error from "/Users/bobby/lighthouse/scheduler/src/components/Appointment/Error.js"
+
 storiesOf("DayListItem", module) //Initiates Storybook and registers our DayListItem component
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
@@ -88,7 +98,7 @@ storiesOf("DayListItem", module) //Initiates Storybook and registers our DayList
           id={interviewer.id}
           name={interviewer.name}
           avatar={interviewer.avatar}
-          setInterviewer={event => action("setInterviewer")(interviewer.id)}
+          onChange={event => action("setInterviewer")}
         />
      
       ));
@@ -107,17 +117,17 @@ storiesOf("DayListItem", module) //Initiates Storybook and registers our DayList
         .add("Initial", () => (
           <InterviewerList
             interviewers={interviewers}
-            setInterviewer={action("setInterviewer")}
+            onChange={action("setInterviewer")}
           />
         ))
         .add("Preselected", () => (
           <InterviewerList
             interviewers={interviewers}
-            interviewer={3}
-            setInterviewer={action("setInterviewer")}
+            value={3}
+            onChange={action("setInterviewer")}
           />
         ));
-//================= Appointment Stories =======================
+        // Appointment Stories 
         storiesOf("Appointment", module)
         .addParameters({
           backgrounds: [{ name: "white", value: "#fff", default: true }]
@@ -125,7 +135,22 @@ storiesOf("DayListItem", module) //Initiates Storybook and registers our DayList
         .add("Appointment", () => <Appointment />)
         .add("Appointment with Time", () => <Appointment time="12pm" />)
 
-        // ====================== Header Stories ====================
-        .add("Header", () => <Header time="12pm" />);
+        // Header Stories 
+        .add("Header", () => <Header time="12pm" />)
+        // Empty Component
+        .add("Empty", () => <Empty onAdd={action("onAdd")} />)
+        // Show Component
+        .add("Show", () => <Show student="Bobby Uno" interviewer={3} onEdit={action("onEdit")} onDelete={action("onDelete")}/>)
+        // Confirm Component
+        .add("Confirm", () => <Confirm message="Delete this appointment??" onConfirm={action("onConfirm")} onCancel={action("onCancel")}/>)
+        // Status Component
+        .add("Status", () => <Status message="Deleting!"/>)
+        // Error Component
+        .add("Error", () => <Error message="Could not delete appointment!" onClose={action("onClose")} 
+        />)
 
+
+
+
+     
   
