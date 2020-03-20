@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
@@ -26,6 +26,8 @@ import Confirm from "/Users/bobby/lighthouse/scheduler/src/components/Appointmen
 import Status from "/Users/bobby/lighthouse/scheduler/src/components/Appointment/Status.js"
 
 import Error from "/Users/bobby/lighthouse/scheduler/src/components/Appointment/Error.js"
+
+import Form from "/Users/bobby/lighthouse/scheduler/src/components/Appointment/Form.js"
 
 storiesOf("DayListItem", module) //Initiates Storybook and registers our DayListItem component
   .addParameters({
@@ -148,6 +150,33 @@ storiesOf("DayListItem", module) //Initiates Storybook and registers our DayList
         // Error Component
         .add("Error", () => <Error message="Could not delete appointment!" onClose={action("onClose")} 
         />)
+        .add("Edit", () => <Form name="Robert Uno" 
+                                interviewers={interviewers} 
+                                interviewer={1}
+                                onSave={action("onSave")} 
+                                onCancel={action("onCancel")}
+                                />
+            )
+        .add("Create", () => <Form interviewers={interviewers}
+                                    onSave={action("onSave")} 
+                                    onCancel={action("onCancel")}
+                                    />)
+        .add("Appointment Empty", () => (
+          <Fragment>
+            <Appointment id={1} time="12pm" />
+            <Appointment id="last" time="1pm" />
+          </Fragment>
+        ))
+        .add("Appointment Booked", () => (
+          <Fragment>
+            <Appointment
+              id={1}
+              time="12pm"
+              interview={{ student: "Lydia Miller-Jones", interviewer }}
+            />
+            <Appointment id="last" time="1pm" />
+          </Fragment>
+        ))
 
 
 
