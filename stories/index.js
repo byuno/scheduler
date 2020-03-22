@@ -102,7 +102,7 @@ storiesOf("DayListItem", module) //Initiates Storybook and registers our DayList
           avatar={interviewer.avatar}
           onChange={event => action("setInterviewer")}
         />));
-        
+
       const interviewers = [
         { id: 1, name: "Sylvia Palmer", avatar: "https://i.imgur.com/LpaY82x.png" },
         { id: 2, name: "Tori Malcolm", avatar: "https://i.imgur.com/Nmx0Qxo.png" },
@@ -176,9 +176,3 @@ storiesOf("DayListItem", module) //Initiates Storybook and registers our DayList
             <Appointment id="last" time="1pm" />
           </Fragment>
         ))
-
-
-
-
-     
-  

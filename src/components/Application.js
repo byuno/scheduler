@@ -6,10 +6,9 @@ import { getAppointmentsForDay } from "helpers/selectors.js"
 
 const axios = require('axios')
 
-
 export default function Application(props) {
 
-const [state, setState] = useState({
+  const [state, setState] = useState({
     day: "Monday",
     days: [],
     appointments: {}
@@ -23,11 +22,8 @@ useEffect(() => {
   Promise.all([
     Promise.resolve(axios.get("/api/days")),
     Promise.resolve(axios.get("/api/appointments")),
-  ]).then((all) => {
-    setState(prev => ({ days: all[0].data, appointments: all[1].data}));
-  });
+  ]).then((all) => { setState(prev => ({ days: all[0].data, appointments: all[1].data })) })
 }, [])
-
 
 const appointments = getAppointmentsForDay(state, state.day);
 
