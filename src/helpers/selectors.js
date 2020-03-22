@@ -1,5 +1,6 @@
 export function getAppointmentsForDay(state, day) {
- 
+ //console.log('this is state', state);
+ //console.log('this is day', day)
   //wconsole.log('this is what stat.days looks like', state.days[0].name)
   
   let daysArray = [];
@@ -19,4 +20,20 @@ export function getAppointmentsForDay(state, day) {
   }
   
   return appointmentsArray;
+};
+
+
+export function getInterview(state, interview) {
+  
+  if (!interview) {
+    return null
+  }
+
+  let interviewObj = {};
+  const interviewerID = interview['interviewer'].toString();
+
+  interviewObj = {  "student": interview.student, 
+                    "interviewer": state.interviewers[interviewerID] }
+
+  return interviewObj;
 };
