@@ -37,3 +37,27 @@ export function getInterview(state, interview) {
 
   return interviewObj;
 };
+
+export function getInterviewersForDay(state, day) {
+  //console.log('this is state', state);
+  //console.log('this is day', day)
+   //wconsole.log('this is what stat.days looks like', state.days[0].name)
+   
+   let daysArray = [];
+   const interviewersArray = [];
+   
+   for(let i = 0; i < state.days.length; i++){
+     
+     if(state.days[i].name === day){
+       daysArray.push(state.days[i].interviewers)
+     }
+   }
+   daysArray = daysArray.reduce((a, b) => a.concat(b), []);
+ 
+   for(let i = 0; i < daysArray.length; i++){
+ 
+     interviewersArray[i] = state.interviewers[daysArray[i].toString()];
+   }
+   
+   return interviewersArray;
+ };
