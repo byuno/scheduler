@@ -16,35 +16,15 @@ export default function useVisualMode(initalMode){
     };
   
 
-  const back = function() {
+  const back = function () {
     let tempHistory = [...history];
 
-    // if(tempHistory.length !== 0){
-    //   setMode(tempHistory.pop());
-    //   setHistory(tempHistory.push(mode))
-    // }
-console.log('temp history', tempHistory)
-    //to do simple back action
-    if(tempHistory.length > 1){
-console.log("if statement reached")
+    if (tempHistory.length > 1) {
       tempHistory.pop()
-      setMode(tempHistory[tempHistory.length-1]);
+      setMode(tempHistory[tempHistory.length - 1]);
       setHistory(tempHistory);
     }
   };
-  
-  return {mode, transition, back};
+
+  return { mode, transition, back };
 };
-
-
-/**?
- *   const transition = (changing, replace = false) => {
-    let newHistory = [...history];
-    if (replace) {
-      newHistory.pop();
-    }
-    newHistory.push(changing);
-    setMode(changing);
-    setHistory(newHistory);
-  };
- */
