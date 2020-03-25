@@ -44,7 +44,9 @@ export default function Application(props) {
     cancelInterview
   } = useApplicationData();
 
+//console.log("hey!!! part1")
 
+//console.log("this is state", state);
     
     const appointments = getAppointmentsForDay(state, state.day);
   
@@ -108,7 +110,8 @@ export default function Application(props) {
       //       })
       //     })
       // };
-      
+      //console.log("hey!!!")
+      //console.log(state.days);
       return (
     <main className="layout">
       <section className="sidebar">
