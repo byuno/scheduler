@@ -35,6 +35,7 @@ const cancel = () => {
           */
          value={name}
          onChange={(event) => setName(event.target.value)}
+         data-testid="student-name-input"
           />
         </form>
         <InterviewerList interviewers={props.interviewers} value={interviewer} onChange={(interviewerID) => setInterviewer(interviewerID)} />
