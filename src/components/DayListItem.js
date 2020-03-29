@@ -1,10 +1,8 @@
 import React from "react";
 import './DayListItem.scss'
-//import DayListItem from "components/DayListItem"
 import classnames from 'classnames';
 
 export default function DayListItem(props) {
- //console.log('props.spots', props.spots)
 
   const formatSpots = () => {
     let spotString = '';

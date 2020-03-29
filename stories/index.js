@@ -13,21 +13,21 @@ import DayList from "components/DayList"
 import InterviewerListItem from "components/InterviewerListItem"
 import InterviewerList from "components/InterviewerList"
 
-import Appointment from "/Users/bobby/lighthouse/scheduler/src/components/Appointment/index.js"
+import Appointment from "src/components/Appointment/index.js"
 
-import Header from "/Users/bobby/lighthouse/scheduler/src/components/Appointment/Header.js"
+import Header from "components/Appointment/Header.js"
 
-import Empty from "/Users/bobby/lighthouse/scheduler/src/components/Appointment/Empty.js"
+import Empty from "components/Appointment/Empty.js"
 
-import Show from "/Users/bobby/lighthouse/scheduler/src/components/Appointment/Show.js"
+import Show from "components/Appointment/Show.js"
 
-import Confirm from "/Users/bobby/lighthouse/scheduler/src/components/Appointment/Confirm.js"
+import Confirm from "components/Appointment/Confirm.js"
 
-import Status from "/Users/bobby/lighthouse/scheduler/src/components/Appointment/Status.js"
+import Status from "components/Appointment/Status.js"
 
-import Error from "/Users/bobby/lighthouse/scheduler/src/components/Appointment/Error.js"
+import Error from "components/Appointment/Error.js"
 
-import Form from "/Users/bobby/lighthouse/scheduler/src/components/Appointment/Form.js"
+import Form from "components/Appointment/Form.js"
 
 storiesOf("DayListItem", module) //Initiates Storybook and registers our DayListItem component
   .addParameters({

@@ -4,7 +4,6 @@ import './InterviewList.scss'
 import PropTypes from 'prop-types'; 
 
 export default function InterviewerList(props) {
-//console.log(props)
 
   const interviewers = props.interviewers.map(interviewer => {
     

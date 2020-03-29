@@ -4,7 +4,6 @@ import classnames from 'classnames';
 
 
 export default function InterviewerListItem(props) {
-  //console.log(props);
 
   const interviewerClass = classnames(
     "interviewers", 

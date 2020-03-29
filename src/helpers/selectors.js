@@ -1,7 +1,5 @@
 export function getAppointmentsForDay(state, day) {
- //console.log('this is state', state);
- //console.log('this is day', day)
-  //wconsole.log('this is what stat.days looks like', state.days[0].name)
+
   
   let daysArray = [];
   const appointmentsArray = [];
@@ -39,9 +37,7 @@ export function getInterview(state, interview) {
 };
 
 export function getInterviewersForDay(state, day) {
-  //console.log('this is state', state);
-  //console.log('this is day', day)
-   //wconsole.log('this is what stat.days looks like', state.days[0].name)
+
    
    let daysArray = [];
    const interviewersArray = [];
