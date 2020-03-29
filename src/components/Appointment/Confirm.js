@@ -1,5 +1,5 @@
-import React from "react"
-import Button from "/Users/bobby/lighthouse/scheduler/src/components/Button.js"
+import React from "react";
+import Button from "components/Button.js";
 
 export default function Confirm(props) {
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import InterviewerList from "/Users/bobby/lighthouse/scheduler/src/components/InterviewerList.js";
-import Button from "/Users/bobby/lighthouse/scheduler/src/components/Button.js"
+import InterviewerList from "components/InterviewerList.js";
+import Button from "components/Button.js"
 
 export default function Form(props){
   //console.log(props);
